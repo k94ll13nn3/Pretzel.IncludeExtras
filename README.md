@@ -13,7 +13,7 @@ The Gist tag has the following syntax:
 {% gist gist_id %}
 ```
 
-This tag returns the HTML that is used to embed a [gist](gist.github.com). It takes the gist id as an argument.
+This tag returns the HTML that is used to embed a [gist](https://gist.github.com/). It takes the gist id as an argument.
 
 ### Installation
 
