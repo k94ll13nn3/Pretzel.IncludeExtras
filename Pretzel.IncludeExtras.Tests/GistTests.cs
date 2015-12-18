@@ -15,17 +15,10 @@ namespace Pretzel.IncludeExtras.Tests
         }
 
         [Test]
-        public void Initialize_OneInvalidArgument_ThrowsArgumentException()
-        {
-            const string gistId = "noJ6ztdlFU";
-
-            Assert.That(() => Template.Parse($"{{% gist {gistId} %}}"), Throws.ArgumentException.And.Message.EqualTo($"The gist with the id \"{gistId}\" does not exist."));
-        }
-
-        [Test]
-        public void Initialize_OneValidArgument_ThrowsNothing()
+        public void Initialize_OneArgument_ThrowsNothing()
         {
             Assert.That(() => Template.Parse("{% gist 90bcfca6ce85c9031a6f %}"), Throws.Nothing);
+            Assert.That(() => Template.Parse("{% gist 90bcfca6ce85c9031a6f        %}"), Throws.Nothing);
         }
 
         [Test]
@@ -38,9 +31,11 @@ namespace Pretzel.IncludeExtras.Tests
         [Test]
         public void Render_GistIdPassed_TagRendered()
         {
-            var template = Template.Parse("{% gist 90bcfca6ce85c9031a6f %}");
+            const string gistId = "90bcfca6ce85c9031a6f";
 
-            Assert.That(template.Render(), Is.EqualTo("<script src=\"https://gist.github.com/90bcfca6ce85c9031a6f.js\"></script>"));
+            var template = Template.Parse($"{{% gist {gistId} %}}");
+
+            Assert.That(template.Render(), Is.EqualTo($"<script src=\"https://gist.github.com/{gistId}.js\"></script>"));
         }
     }
 }
