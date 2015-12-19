@@ -15,21 +15,21 @@ namespace Pretzel.IncludeExtras.Tests
         }
 
         [Test]
-        public void Initialize_OneArgument_ThrowsNothing()
+        public void Initialize_GistIdIsPassed_ThrowsNothing()
         {
             Assert.That(() => Template.Parse("{% gist 90bcfca6ce85c9031a6f %}"), Throws.Nothing);
             Assert.That(() => Template.Parse("{% gist 90bcfca6ce85c9031a6f        %}"), Throws.Nothing);
         }
 
         [Test]
-        public void Initialize_ZeroOrTooManyArgumentsPassed_ThrowsArgumentException()
+        public void Initialize_ZeroOrTooManyArgumentsArePassed_ThrowsArgumentException()
         {
             Assert.That(() => Template.Parse("{% gist %}"), Throws.ArgumentException.And.Message.EqualTo(syntaxMessage));
             Assert.That(() => Template.Parse("{% gist noJ6ztdlFU KMT6B7DTLm%}"), Throws.ArgumentException.And.Message.EqualTo(syntaxMessage));
         }
 
         [Test]
-        public void Render_GistIdPassed_TagRendered()
+        public void Render_MarkupIsValid_TagRendered()
         {
             const string gistId = "90bcfca6ce85c9031a6f";
 

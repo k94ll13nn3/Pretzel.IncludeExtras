@@ -124,6 +124,7 @@
   <ItemGroup>
     <Compile Include="GistTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StackOverflowTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pretzel.IncludeExtras\Pretzel.IncludeExtras.csproj">

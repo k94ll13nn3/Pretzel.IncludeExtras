@@ -15,6 +15,16 @@ The Gist tag has the following syntax:
 
 This tag returns the HTML that is used to embed a [gist](https://gist.github.com/). It takes the gist id as an argument.
 
+### StackOverflow tag
+
+The StackOverflow tag has the following syntax:
+
+```
+{% stack_overflow user_id [default|dark|clean|hotdog] [width [height]] %}
+```
+
+The goal of this tag is to render the [flair](http://stackoverflow.com/users/flair) of an user.
+
 ### Installation
 
 Download the [latest release](https://github.com/k94ll13nn3/Pretzel.IncludeExtras/releases/latest) and copy `Pretzel.IncludeExtras.dll` to the `_plugins` folder at the root of your site folder (you may have to **unblock** the file).
