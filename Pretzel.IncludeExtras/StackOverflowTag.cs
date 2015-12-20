@@ -1,11 +1,11 @@
 ﻿// Pretzel.IncludeExtras plugin
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
+using System.Text.RegularExpressions;
 using DotLiquid;
 using Pretzel.Logic.Extensibility;
-using System.Text.RegularExpressions;
-using System;
 
 namespace Pretzel.IncludeExtras
 {
